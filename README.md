@@ -1,12 +1,6 @@
 # 🔄 SWAP
 > Plataforma de compra, venta e intercambio de artículos entre estudiantes universitarios
 
-[![Estado](https://img.shields.io/badge/Estado-En%20Desarrollo-yellow)](https://github.com/)
-[![Universidad](https://img.shields.io/badge-Universidad-Antonio%20Nari%C3%B1o-blue)](https://www.uan.edu.co/)
-[![Plataforma](https://img.shields.io/badge-Plataforma-Android-green)](https://www.android.com/)
-[![Flutter](https://img.shields.io/badge-Flutter-3.x-02569B?logo=flutter)](https://flutter.dev/)
-[![Firebase](https://img.shields.io/badge-Firebase-Firestore%20+%20Auth-FFCA28?logo=firebase)](https://firebase.google.com/)
-
 ---
 
 ## 📋 Tabla de Contenidos
