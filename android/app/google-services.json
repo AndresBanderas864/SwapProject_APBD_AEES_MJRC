@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1002731585755",
+    "project_id": "swap-449c2",
+    "storage_bucket": "swap-449c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1002731585755:android:445b2cfd9c3dc680918cfe",
+        "android_client_info": {
+          "package_name": "com.uan.swap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHfpWIAXeWn-DjC9XfE0btH3kanMwj5D8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

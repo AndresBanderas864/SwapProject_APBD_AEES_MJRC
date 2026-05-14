@@ -1,2 +1,49 @@
-# Ignorar documentación privada
+# Flutter
+build/
+.dart_tool/
+.packages
+.pub/
+.pub-cache/
+
+# Android
+android/.gradle/
+android/.kotlin/
+android/app/build/
+android/build/
+*.apk
+*.aab
+local.properties
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Runner.xcworkspace/xcuserdata/
+ios/Runner.xcodeproj/xcuserdata/
+
+# macOS
+macos/Pods/
+macos/.symlinks/
+
+# Linux
+linux/flutter/ephemeral/
+
+# Windows
+windows/flutter/ephemeral/
+windows/runner/cmake-build*/
+
+# IDE
+.idea/
+*.iml
+*.swp
+*.swo
+*.swn
+
+# Misc
+.metadata
+*.log
+*.tmp
+
+# Private docs
 docs/_private/
