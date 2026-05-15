@@ -182,4 +182,117 @@ class AppTheme {
       iconTheme: const IconThemeData(color: AppColors.carbonOscuro),
     );
   }
+
+  static ThemeData get darkTheme {
+    const bgMain    = Color(0xFF1A1A18);
+    const bgCard    = Color(0xFF242422);
+    const bgInput   = Color(0xFF2E2E2B);
+    const teal      = Color(0xFF5DCAA5);
+    const coral     = Color(0xFFD85A30);
+    const textMain  = Color(0xFFE8E6DF);
+    const textSub   = Color(0xFF888780);
+
+    return ThemeData(
+      useMaterial3: false,
+      brightness: Brightness.dark,
+      primaryColor: teal,
+      scaffoldBackgroundColor: bgMain,
+      colorScheme: const ColorScheme.dark(
+        primary: teal,
+        secondary: coral,
+        background: bgMain,
+        surface: bgCard,
+        onPrimary: Colors.white,
+        onSecondary: Colors.white,
+        onBackground: textMain,
+        onSurface: textMain,
+        error: Color(0xFFCF6679),
+        onError: Colors.white,
+      ),
+      textTheme: GoogleFonts.interTextTheme(ThemeData.dark().textTheme).copyWith(
+        displayLarge:  GoogleFonts.poppins(fontSize: 24, fontWeight: FontWeight.w600, color: textMain),
+        displayMedium: GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textMain),
+        titleLarge:    GoogleFonts.poppins(fontSize: 18, fontWeight: FontWeight.w600, color: textMain),
+        titleMedium:   GoogleFonts.inter(fontSize: 16, fontWeight: FontWeight.w500, color: textMain),
+        bodyLarge:     GoogleFonts.inter(fontSize: 14, color: textMain),
+        bodyMedium:    GoogleFonts.inter(fontSize: 14, color: textMain),
+        bodySmall:     GoogleFonts.inter(fontSize: 12, color: textSub),
+        labelSmall:    GoogleFonts.inter(fontSize: 12, color: textSub),
+      ),
+      appBarTheme: AppBarTheme(
+        backgroundColor: bgCard,
+        foregroundColor: textMain,
+        elevation: 0,
+        centerTitle: true,
+        titleTextStyle: GoogleFonts.poppins(
+            fontSize: 18, fontWeight: FontWeight.w600, color: textMain),
+        iconTheme: const IconThemeData(color: textMain),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: teal,
+          foregroundColor: Colors.white,
+          elevation: 0,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          textStyle: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600),
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
+        ),
+      ),
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          foregroundColor: teal,
+          side: const BorderSide(color: teal, width: 1.5),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          textStyle: GoogleFonts.poppins(fontSize: 14, fontWeight: FontWeight.w600),
+          padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 24),
+        ),
+      ),
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: teal,
+          textStyle: GoogleFonts.inter(fontSize: 14, fontWeight: FontWeight.w500),
+        ),
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: bgInput,
+        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+        border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: bgInput)),
+        enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: bgInput)),
+        focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: teal, width: 2)),
+        errorBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: const BorderSide(color: Color(0xFFCF6679))),
+        labelStyle: GoogleFonts.inter(fontSize: 14, color: textSub),
+        hintStyle: GoogleFonts.inter(fontSize: 14, color: textSub),
+      ),
+      cardTheme: CardThemeData(
+        color: bgCard,
+        elevation: 2,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        margin: EdgeInsets.zero,
+      ),
+      floatingActionButtonTheme: const FloatingActionButtonThemeData(
+        backgroundColor: teal,
+        foregroundColor: Colors.white,
+        elevation: 4,
+      ),
+      switchTheme: SwitchThemeData(
+        thumbColor: MaterialStateProperty.resolveWith(
+            (s) => s.contains(MaterialState.selected) ? teal : textSub),
+        trackColor: MaterialStateProperty.resolveWith(
+            (s) => s.contains(MaterialState.selected)
+                ? teal.withOpacity(0.4)
+                : bgInput),
+      ),
+      dividerColor: bgInput,
+      iconTheme: const IconThemeData(color: textMain),
+    );
+  }
 }

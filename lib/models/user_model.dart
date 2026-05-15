@@ -5,12 +5,14 @@ class UserModel {
   final String email;
   final String phone;
   final DateTime createdAt;
+  final String? photoUrl;
 
   UserModel({
     required this.uid,
     required this.email,
     required this.phone,
     required this.createdAt,
+    this.photoUrl,
   });
 
   factory UserModel.fromFirestore(DocumentSnapshot doc) {
@@ -20,6 +22,7 @@ class UserModel {
       email: data['email'] ?? '',
       phone: data['phone'] ?? '',
       createdAt: (data['createdAt'] as Timestamp).toDate(),
+      photoUrl: data['photoUrl'] as String?,
     );
   }
 
@@ -29,6 +32,7 @@ class UserModel {
       'email': email,
       'phone': phone,
       'createdAt': Timestamp.fromDate(createdAt),
+      'photoUrl': photoUrl,
     };
   }
 }

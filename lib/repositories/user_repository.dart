@@ -18,4 +18,8 @@ class UserRepository {
       return null;
     }
   }
+
+  Future<void> updateUser(String uid, Map<String, dynamic> data) async {
+    await _collection.doc(uid).update(data);
+  }
 }

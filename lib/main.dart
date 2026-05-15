@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'providers/auth_provider.dart';
 import 'providers/article_provider.dart';
+import 'providers/theme_provider.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart';
 import 'screens/splash_screen.dart';
@@ -14,12 +15,14 @@ void main() async {
   await Firebase.initializeApp();
   final prefs = await SharedPreferences.getInstance();
   final splashSeen = prefs.getBool('swap_splash_seen') ?? false;
-  runApp(SwapApp(showSplash: !splashSeen));
+  final isDark = prefs.getBool('swap_dark_mode') ?? false;
+  runApp(SwapApp(showSplash: !splashSeen, initialDark: isDark));
 }
 
 class SwapApp extends StatelessWidget {
   final bool showSplash;
-  const SwapApp({super.key, required this.showSplash});
+  final bool initialDark;
+  const SwapApp({super.key, required this.showSplash, required this.initialDark});
 
   @override
   Widget build(BuildContext context) {
@@ -27,11 +30,16 @@ class SwapApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => AuthProvider()),
         ChangeNotifierProvider(create: (_) => ArticleProvider()),
+        ChangeNotifierProvider(create: (_) => ThemeProvider(initialDark: initialDark)),
       ],
-      child: MaterialApp(
-        title: 'SWAP',
-        theme: AppTheme.lightTheme,
-        home: showSplash ? const SplashScreen() : const AuthGate(),
+      child: Consumer<ThemeProvider>(
+        builder: (context, themeProvider, _) => MaterialApp(
+          title: 'SWAP',
+          theme: AppTheme.lightTheme,
+          darkTheme: AppTheme.darkTheme,
+          themeMode: themeProvider.isDark ? ThemeMode.dark : ThemeMode.light,
+          home: showSplash ? const SplashScreen() : const AuthGate(),
+        ),
       ),
     );
   }
