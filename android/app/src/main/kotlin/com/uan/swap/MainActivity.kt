@@ -1,4 +1,4 @@
-package com.uan.swap.swap
+package com.uan.swap
 
 import io.flutter.embedding.android.FlutterActivity
 

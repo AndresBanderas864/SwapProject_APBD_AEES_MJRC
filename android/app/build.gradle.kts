@@ -8,7 +8,7 @@ plugins {
 
 android {
     namespace = "com.uan.swap"
-    compileSdk = 34
+    compileSdk = 36
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
