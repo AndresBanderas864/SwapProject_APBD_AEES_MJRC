@@ -33,7 +33,7 @@ Flutter es el framework principal de desarrollo. Permite construir aplicaciones 
 |----------|-------------|
 | **Firebase Auth** | Registro e inicio de sesión, validación de dominio `@uan.edu.co` |
 | **Cloud Firestore** | Almacenamiento de usuarios, artículos y publicaciones en la nube |
-| **Firebase Storage** *(Could Have)* | Imágenes de los artículos |
+| **Cloudinary** *(Could Have)* | Imágenes de los artículos |
 
 ## Gestión de Estado
 
